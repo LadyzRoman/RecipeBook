@@ -11,12 +11,12 @@ export class RecipeService {
   constructor() {
     this.recipes = [
       {id: 1, title: 'Котлетка с пюрешкой', cookingTime: 60, steps: [], ingredients: []},
-      {id: 2, title: 'Жареная курица', cookingTime: 60, steps: [], ingredients: [], imgUrl: 'file://D:\\Projects\\RecipeBook\\images\\72b4def6518b066e97b7d67a0a99c5fc.jpg'},
+      {id: 2, title: 'Жареная курица', cookingTime: 60, steps: [], ingredients: [], imgId: 1},
       {id: 3, title: 'Салат', cookingTime: 60, steps: [], ingredients: []},
-      {id: 4, title: 'Борщ', cookingTime: 60, steps: [], ingredients: []},
-      {id: 5, title: 'Солянка', cookingTime: 60, steps: [], ingredients: []},
-      {id: 6, title: 'Плов', cookingTime: 60, steps: [], ingredients: []},
-      {id: 7, title: 'Шаверма', cookingTime: 60, steps: [], ingredients: []},
+      {id: 4, title: 'Борщ', cookingTime: 60, steps: [], ingredients: [], imgId: 2},
+      {id: 5, title: 'Солянка', cookingTime: 60, steps: [], ingredients: [], imgId: 5},
+      {id: 6, title: 'Плов', cookingTime: 60, steps: [], ingredients: [], imgId: 4},
+      {id: 7, title: 'Шаверма', cookingTime: 60, steps: [], ingredients: [], imgId: 3},
       {id: 8, title: 'Спагетти болольезе', cookingTime: 60, steps: [], ingredients: []},
     ];
   }

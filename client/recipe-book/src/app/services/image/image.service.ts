@@ -1,16 +1,19 @@
 import { Injectable } from '@angular/core';
 import {Observable} from 'rxjs';
 import {HttpClient} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ImageService {
+  private baseUrl = 'images';
 
   constructor(private http: HttpClient) { }
 
-  getImage(imageUrl: string): Observable<Blob> {
+  getImage(imageId: number): Observable<Blob> {
+    const url = `${environment.apiUrl}/${this.baseUrl}/${imageId}`;
     return this.http
-      .get(imageUrl, { responseType: 'blob' });
+      .get(url, { responseType: 'blob' });
   }
 }
