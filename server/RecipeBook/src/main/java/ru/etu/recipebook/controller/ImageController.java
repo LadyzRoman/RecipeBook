@@ -14,17 +14,17 @@ import ru.etu.recipebook.service.FileLocationService;
 public class ImageController {
 
     @Autowired
-    private FileLocationService<Long> fileLocationService;
+    private FileLocationService<String> fileLocationService;
 
     @GetMapping(path = "/{id}", produces = MediaType.IMAGE_JPEG_VALUE)
     @ResponseBody
-    public FileSystemResource downloadImage(@PathVariable Long id) {
+    public FileSystemResource downloadImage(@PathVariable String id) {
         return fileLocationService.find(id);
     }
 
     @PostMapping(path = "/")
     @ResponseBody
-    public Long uploadImage(@RequestParam MultipartFile image) throws Exception {
+    public String uploadImage(@RequestParam MultipartFile image) throws Exception {
         return fileLocationService.save(image.getBytes(), image.getOriginalFilename());
     }
 }

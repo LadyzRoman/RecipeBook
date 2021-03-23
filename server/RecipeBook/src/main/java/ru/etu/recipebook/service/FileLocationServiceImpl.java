@@ -10,20 +10,23 @@ import ru.etu.recipebook.repository.FileSystemRepository;
 import ru.etu.recipebook.repository.ImageRepository;
 
 @Service
-public class FileLocationServiceImpl implements FileLocationService<Long> {
+public class FileLocationServiceImpl implements FileLocationService<String> {
     @Autowired
-    FileSystemRepository fileSystemRepository;
+    private FileSystemRepository fileSystemRepository;
     @Autowired
-    ImageRepository imageRepository;
+    private ImageRepository imageRepository;
+    @Autowired
+    private IdService<String> idService;
 
     @Override
-    public Long save(byte[] bytes, String imageName) {
+    public String save(byte[] bytes, String imageName) {
         String location = fileSystemRepository.save(bytes, imageName);
-        return imageRepository.save(new Image(location)).getId();
+        String id = idService.getId();
+        return imageRepository.save(new Image(id ,location)).getId();
     }
 
     @Override
-    public FileSystemResource find(Long id) {
+    public FileSystemResource find(String id) {
         Image image = imageRepository.findById(id)
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
 
