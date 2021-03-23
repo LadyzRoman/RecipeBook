@@ -10,11 +10,13 @@ import {ImageService} from '../services/image/image.service';
 export class RecipePreviewComponent implements OnInit {
   @Input() recipe?: Recipe;
   imageToShow: any;
+  imageLoaded = false;
   constructor(private imageService: ImageService) { }
 
   ngOnInit(): void {
     this.imageService.getImage(this.recipe?.imgUrl).subscribe(data => {
       this.createImage(data);
+      this.imageLoaded = true;
     }, error => {
       console.log(error);
     });
