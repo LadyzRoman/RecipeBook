@@ -1,22 +1,12 @@
-export class Recipe {
-  constructor(private _recipeId: number,
-              private _recipeTitle: string) {
-  }
+import {Step} from './step';
+import {Ingredient} from './ingredient';
 
-
-  get recipeId(): number {
-    return this._recipeId;
-  }
-
-  set recipeId(value: number) {
-    this._recipeId = value;
-  }
-
-  get recipeTitle(): string {
-    return this._recipeTitle;
-  }
-
-  set recipeTitle(value: string) {
-    this._recipeTitle = value;
-  }
+export interface Recipe {
+    id: number;
+    title: string;
+    cookingTime: number;
+    steps: Step[];
+    ingredients: Ingredient[];
+    imgUrl?: any;
+    description?: string;
 }

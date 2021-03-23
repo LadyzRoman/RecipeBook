@@ -1,3 +1,8 @@
-<div *ngFor="let recipe of recipes">
-  <app-recipe-preview [recipe]="recipe"></app-recipe-preview>
+<div class="row">
+  <h1>Рецепты:</h1>
+</div>
+<div class="row">
+  <div class="col-3 mb-2" *ngFor="let recipe of recipes">
+    <app-recipe-preview [recipe]="recipe"></app-recipe-preview>
+  </div>
 </div>

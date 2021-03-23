@@ -1,1 +1,10 @@
-<p>recipe-preview works!</p>
+<div class="card h-100" *ngIf="recipe">
+  <img [src]="imageToShow" class="card-img-top top-img">
+  <div class="card-body">
+
+    <h3 class="card-title">{{recipe.title}}</h3>
+    <p class="card-text">{{recipe.description}}</p>
+    <p class="card-text">{{recipe.ingredients.length}} Ингридиентов</p>
+    <p class="card-text">Время приготовления: {{recipe.cookingTime}}</p>
+  </div>
+</div>
