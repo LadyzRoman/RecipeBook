@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {Recipe} from '../model/recipe';
-import {ImageService} from '../services/image/image.service';
+import {Recipe} from '../../model/recipe';
+import {ImageService} from '../../services/image/image.service';
 
 @Component({
   selector: 'app-recipe-preview',
@@ -14,12 +14,14 @@ export class RecipePreviewComponent implements OnInit {
   constructor(private imageService: ImageService) { }
 
   ngOnInit(): void {
-    this.imageService.getImage(this.recipe?.imgUrl).subscribe(data => {
-      this.createImage(data);
-      this.imageLoaded = true;
-    }, error => {
-      console.log(error);
-    });
+    if (this.recipe?.imgId) {
+      this.imageService.getImage(this.recipe?.imgId).subscribe(data => {
+        this.createImage(data);
+        this.imageLoaded = true;
+      }, error => {
+        console.log(error);
+      });
+    }
   }
 
   createImage(image: Blob): void {

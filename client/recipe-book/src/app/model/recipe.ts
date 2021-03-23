@@ -7,6 +7,6 @@ export interface Recipe {
     cookingTime: number;
     steps: Step[];
     ingredients: Ingredient[];
-    imgUrl?: any;
+    imgId?: string;
     description?: string;
 }

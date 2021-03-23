@@ -11,9 +11,8 @@ export class ImageService {
 
   constructor(private http: HttpClient) { }
 
-  getImage(imageId: number): Observable<Blob> {
+  getImage(imageId: string): Observable<Blob> {
     const url = `${environment.apiUrl}/${this.baseUrl}/${imageId}`;
-    return this.http
-      .get(url, { responseType: 'blob' });
+    return this.http.get(url, { responseType: 'blob' });
   }
 }

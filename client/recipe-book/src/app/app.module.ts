@@ -3,8 +3,8 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { RecipeListComponent } from './recipe-list/recipe-list.component';
-import { RecipePreviewComponent } from './recipe-preview/recipe-preview.component';
+import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
+import { RecipePreviewComponent } from './components/recipe-preview/recipe-preview.component';
 import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({

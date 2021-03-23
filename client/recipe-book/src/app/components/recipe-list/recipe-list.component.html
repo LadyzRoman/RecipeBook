@@ -1,0 +1,23 @@
+<div class="container text-center py-5">
+  <h1>Рецепты</h1>
+  <div class="row">
+    <div class="col-6 mx-auto">
+      <p class="text-muted lead">Какой нибудь прикольный текст про то, что у нас тут лучшие рецепты на
+      главной странице или
+      что то вроде того</p>
+    </div>
+  </div>
+</div>
+
+<div class="bg-light pt-3">
+  <div class="container">
+    <div class="row mb-2">
+      <p>Найдено {{recipes.length}} рецептов</p>
+    </div>
+    <div class="row">
+      <div class="col-3 mb-2" *ngFor="let recipe of recipes">
+        <app-recipe-preview [recipe]="recipe"></app-recipe-preview>
+      </div>
+    </div>
+  </div>
+</div>
