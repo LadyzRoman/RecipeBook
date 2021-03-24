@@ -1,5 +1,6 @@
 package ru.etu.recipebook.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,9 +12,9 @@ import javax.persistence.Id;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Image {
+public class ImageInfo {
     @Id
     private String id;
-
+    @JsonIgnore
     private String fileName;
 }
