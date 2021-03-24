@@ -2,7 +2,8 @@ import {Recipe} from '../model/recipe';
 
 export const RECIPES: Recipe[] = [
   {
-    id: 1, title: 'Котлетка с пюрешкой', cookingTime: 60, steps: [], ingredients: [], createdAt: new Date(), category: '1', tags: [],
+    id: 1, title: 'Котлетка с пюрешкой', cookingTime: 60, steps: [], ingredients: [{id: 1, name: 'Фарш', count: 800, unit: 'грамм'},
+      {id: 2, name: 'Картофель', count: 5, unit: 'шт'} ], createdAt: new Date(), category: '1', tags: [],
     imgId: '9e922844-3ebf-455f-9fad-6e1a7a8b53fd',
   },
   {

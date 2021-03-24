@@ -2,6 +2,9 @@
   <div class="container">
     <div *ngIf="recipe">
       <p>{{recipe.title}}</p>
+      <ul>
+        <li *ngFor="let ingredient of recipe.ingredients">{{ingredient.name}} {{ingredient.count}} {{ingredient.unit}} </li>
+      </ul>
     </div>
   </div>
 </div>
