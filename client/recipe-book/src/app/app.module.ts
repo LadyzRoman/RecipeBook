@@ -9,6 +9,8 @@ import {HttpClientModule} from '@angular/common/http';
 import { RecipeInfoComponent } from './components/recipe-info/recipe-info.component';
 import { TestUploadComponent } from './components/test-upload/test-upload.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
+import { RecipesComponent } from './components/recipes/recipes.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +18,9 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     RecipeListComponent,
     RecipePreviewComponent,
     RecipeInfoComponent,
-    TestUploadComponent
+    TestUploadComponent,
+    TopNavigationComponent,
+    RecipesComponent
   ],
   imports: [
     BrowserModule,
