@@ -7,7 +7,6 @@ import {RECIPES} from '../../mock/recipes';
   providedIn: 'root'
 })
 export class RecipeService {
-  private recipes: Recipe[] = [];
 
   constructor() {
   }
@@ -17,4 +16,11 @@ export class RecipeService {
   }
 
 
+  getRecipe(id: number): Observable<Recipe>{
+    const recipe = RECIPES.find(value => value.id === id);
+    if (recipe) {
+      return of(recipe);
+    }
+    throw new Error(`no hero was found with index ${id}`);
+  }
 }

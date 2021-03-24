@@ -6,17 +6,20 @@ import { AppComponent } from './app.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipePreviewComponent } from './components/recipe-preview/recipe-preview.component';
 import {HttpClientModule} from '@angular/common/http';
+import { RecipeInfoComponent } from './components/recipe-info/recipe-info.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeListComponent,
-    RecipePreviewComponent
+    RecipePreviewComponent,
+    RecipeInfoComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
