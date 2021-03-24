@@ -14,4 +14,10 @@ export class ImageService {
     const url = `${environment.apiUrl}/${environment.imagesEndpoint}/${imageId}`;
     return this.http.get(url, { responseType: 'blob' });
   }
+
+  uploadImage(image: File): Observable<any> {
+    const formData: any = new FormData();
+    formData.append('image', image);
+    return this.http.post(`${environment.apiUrl}/${environment.imagesEndpoint}`, formData);
+  }
 }

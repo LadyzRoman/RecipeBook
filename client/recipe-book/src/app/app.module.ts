@@ -7,21 +7,27 @@ import { RecipeListComponent } from './components/recipe-list/recipe-list.compon
 import { RecipePreviewComponent } from './components/recipe-preview/recipe-preview.component';
 import {HttpClientModule} from '@angular/common/http';
 import { RecipeInfoComponent } from './components/recipe-info/recipe-info.component';
+import { TestUploadComponent } from './components/test-upload/test-upload.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     RecipeListComponent,
     RecipePreviewComponent,
-    RecipeInfoComponent
+    RecipeInfoComponent,
+    TestUploadComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
-  providers: [],
+  providers: []
+  ,
   bootstrap: [AppComponent]
 })
 export class AppModule { }
