@@ -1,7 +1,6 @@
-export class Ingredient {
-  constructor(
-    private id: number,
-    private name: string
-  ) {
-  }
+export interface Ingredient {
+  id: number;
+  name: string;
+  count: number;
+  unit: string;
 }
