@@ -11,6 +11,8 @@ import { TestUploadComponent } from './components/test-upload/test-upload.compon
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { TopNavigationComponent } from './components/top-navigation/top-navigation.component';
 import { RecipesComponent } from './components/recipes/recipes.component';
+import { SearchPanelComponent } from './components/search-panel/search-panel.component';
+import { PrettyUnitPipe } from './pipes/pretty-unit.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +22,9 @@ import { RecipesComponent } from './components/recipes/recipes.component';
     RecipeInfoComponent,
     TestUploadComponent,
     TopNavigationComponent,
-    RecipesComponent
+    RecipesComponent,
+    SearchPanelComponent,
+    PrettyUnitPipe
   ],
   imports: [
     BrowserModule,
