@@ -3,8 +3,16 @@ import {Unit} from '../model/ingredient';
 
 export const RECIPES: Recipe[] = [
   {
-    id: 1, title: 'Котлетка с пюрешкой', cookingTime: 60, steps: [], ingredients: [{id: 1, name: 'Фарш', count: 800, unit: Unit.GRAM},
-      {id: 2, name: 'Картофель', count: 5, unit: Unit.PIECE} ], createdAt: new Date(), category: '1', tags: [],
+    id: 1, title: 'Котлетка с пюрешкой', cookingTime: 60,
+    steps:  [   {id: 1, imgId: ' ', text: 'Порезать лук'},
+                {id: 2, imgId: ' ', text: 'Почистить и сварить картошку'},
+                {id: 3, imgId: ' ', text: 'Помять картошку'}
+            ],
+    ingredients: [
+      {id: 1, name: 'Фарш', count: 800, unit: Unit.GRAM},
+      {id: 2, name: 'Картофель', count: 5, unit: Unit.PIECE},
+      {id: 3, name: 'Лук', count: 2, unit: Unit.PIECE} ],
+    createdAt: new Date(), category: '1', tags: [],
     imgId: '9e922844-3ebf-455f-9fad-6e1a7a8b53fd',
   },
   {
