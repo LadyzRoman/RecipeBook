@@ -14,7 +14,7 @@
 
   <div class="card-body">
     <h3 class="card-title">
-      <a class="text-reset text-decoration-none" routerLink="/recipes/{{recipe.id}}">{{recipe.title}}</a>
+      <a class="text-reset text-decoration-none" routerLink="/recipes/{{recipe.category.id}}/{{recipe.id}}">{{recipe.title}}</a>
     </h3>
     <p class="card-text">{{recipe.description}}</p>
     <p class="card-text">{{recipe.ingredients.length}} Ингридиентов</p>
