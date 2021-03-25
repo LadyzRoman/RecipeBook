@@ -3,7 +3,7 @@
 <div class="container text-center py-5">
   <div  *ngIf="category; else noCategory">
     <h1 class="display-5 d-inline-block me-1">{{category.title}}</h1>
-    <button routerLink="/recipes" class="btn btn-close d-inline-block align-baseline"></button>
+    <button routerLink="/recipes" class="btn btn-close d-inline-block align-top"></button>
   </div>
   <ng-template #noCategory><h1 class="display-5">Рецепты</h1></ng-template>
 
