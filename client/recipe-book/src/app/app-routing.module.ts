@@ -8,6 +8,7 @@ import {RecipesComponent} from './components/recipes/recipes.component';
 
 const recipeRoutes: Routes = [
   {path: '', component: RecipeListComponent},
+  {path: 'undefined', redirectTo: '', pathMatch: 'full'},
   {path: ':category', component: RecipeListComponent},
   {path: ':category/:id', component: RecipeInfoComponent}
 ];
