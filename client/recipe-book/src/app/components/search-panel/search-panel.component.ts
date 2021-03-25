@@ -17,15 +17,17 @@ export class SearchPanelComponent implements OnInit {
   });
 
   constructor(private categoryService: CategoryService,
-              private router: Router) { }
-
-  ngOnInit(): void {
+              private router: Router) {
     this.categoryService.getCategories().subscribe(categories => {
       this.categories = [];
       this.categories.push({id: 'undefined', title: 'Любая категория'});
       this.categories = this.categories.concat(categories);
       this.form.patchValue({category: this.categories[0]});
     });
+  }
+
+  ngOnInit(): void {
+
   }
 
   find(): void {
