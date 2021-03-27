@@ -4,16 +4,17 @@ import {Unit} from '../model/ingredient';
 export const RECIPES: Recipe[] = [
   {
     id: 1, title: 'Котлетка с пюрешкой', cookingTime: 60,
-    steps:  [   {id: 1, imgId: ' ', text: 'Порезать лук'},
-                {id: 2, imgId: ' ', text: 'Почистить и сварить картошку'},
-                {id: 3, imgId: ' ', text: 'Помять картошку'}
+    steps:  [
+                {id: 1, imgId: 'fecf89ae-654e-4c0d-87e1-7732231b2ac5', text: 'Картофель чистим, разрезаем на половинки и отвариваем в подсоленной воде.'},
+                {id: 2, imgId: '1cf9a8eb-310e-4e41-b451-ed7d922a9c61', text: 'Нагреваем молоко, добавляем в него немного сливочного масла. Отваренный картофель измельчаем, соединяем с нагретым молоком и размешиваем.'},
+                {id: 3, imgId: '14869ea5-f0e3-410a-9c62-0da01a96cfa8', text: 'Подаем котлеты с пюре и нарезанным соленым огурцом. Приятного аппетита!'}
             ],
     ingredients: [
       {id: 1, name: 'Фарш', count: 800, unit: Unit.GRAM},
       {id: 2, name: 'Картофель', count: 5, unit: Unit.PIECE},
       {id: 3, name: 'Лук', count: 2, unit: Unit.PIECE} ],
     createdAt: new Date(), category: '1', tags: [],
-    imgId: '9e922844-3ebf-455f-9fad-6e1a7a8b53fd',
+    imgId: 'a82fce71-15ec-4171-9289-db319ef64659',
   },
   {
     id: 2, title: 'Жареная курица', cookingTime: 60, steps: [], ingredients: [], createdAt: new Date(), category: '1', tags: [],
@@ -24,7 +25,7 @@ export const RECIPES: Recipe[] = [
   },
   {
     id: 4, title: 'Борщ', cookingTime: 60, steps: [], ingredients: [], createdAt: new Date(), category: '1', tags: [],
-    imgId: '2df30a29-c87b-4b27-9a46-f7c6fad32117',
+    imgId: '328f71f7-6dc4-487c-9204-e39c1a38392a',
   },
   {
     id: 5, title: 'Солянка', cookingTime: 60, steps: [], ingredients: [], createdAt: new Date(), category: '1', tags: [],

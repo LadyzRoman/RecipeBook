@@ -34,5 +34,4 @@ export class RecipePreviewComponent implements OnInit {
       reader.readAsDataURL(image);
     }
   }
-
 }

@@ -2,7 +2,7 @@ server:
   port: 8080
 spring:
   datasource:
-    url: jdbc:h2:file:d:\Projects\RecipeBook\recipes
+    url: jdbc:h2:file:C:\Users\alvas\Documents\Univer\TRPO_DB\recipes
     driver-class-name: org.h2.Driver
     username: sa
     password: 1234
@@ -19,5 +19,5 @@ spring:
         web-allow-others: false
 
 filesystem:
-  images: d:\Projects\RecipeBook\images\
+  images: C:\Users\alvas\Documents\Univer\TRPO_DB\images\
 
