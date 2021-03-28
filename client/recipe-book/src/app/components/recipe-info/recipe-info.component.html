@@ -3,7 +3,7 @@
 <div class="bg-white pt-3">
   <div class="container">
     <div *ngIf="recipe">
-      <div style="text-align: center;" > <h1>{{recipe.title}}</h1></div>
+      <div class="title"> <h1>{{recipe.title}}</h1></div>
       <div class="row">
         <div class="col">
           <img *ngIf="imageLoaded; else placeholder"
@@ -14,7 +14,7 @@
             <p class="text-md-center">Можно сюда какой-нибудь контент интересный. Например, энергетическую ценность или предысторию рецепта или краткое описание блюда</p>
         </div>
         <div class="bg-light pt-3">
-          <h4 style="text-align: left;">Ингредиенты</h4>
+          <h4>Ингредиенты</h4>
         <ul class="list-group">
           <li class="list-group-item d-flex justify-content-between align-items-start bg-light" *ngFor="let ingredient of recipe.ingredients">
             <div class="ms-2 me-auto"> {{ingredient.name}} </div> {{ ingredient.count | prettyUnit:ingredient.unit }}
@@ -23,7 +23,7 @@
         </div>
       </div>
       <div class="bg-light pt-3">
-        <h4 style="text-align: left;">Инструкция приготовления </h4>
+        <h4>Инструкция приготовления </h4>
         <p class="fs-5">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-alarm" viewBox="0 0 16 16">
             <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/>
@@ -52,7 +52,6 @@
     </div>
   </div>
 </div>
-
 
 <ng-template #placeholder>
   <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMid slice" focusable="false">
