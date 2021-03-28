@@ -1,5 +1,10 @@
-<div *ngIf = "imageLoaded" class="img-container-4x3" >
-  <img [src]="imageToShow" class="img-relative" alt="Step image">
+<div class="row">
+  <div *ngIf="imageLoaded" class="col-4">
+    <div class="img-container-16x9">
+      <img [src]="imageToShow" class="img-relative" alt="Step image">
+    </div>
+  </div>
+  <div class="col">
+    <p class="fs-4">{{ step?.text }}</p>
+  </div>
 </div>
-<p class="fs-4">{{ step?.text }}</p>
-
