@@ -1,23 +1,8 @@
-.top-img {
-  position: relative;
-  padding-top: 75%;
-  width: 100%;
-}
-
 .bd-placeholder-img {
   font-size: 1.125rem;
   text-anchor: middle;
   -webkit-user-select: none;
   -moz-user-select: none;
   user-select: none;
-}
-
-.card-img-top {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
 }
 
