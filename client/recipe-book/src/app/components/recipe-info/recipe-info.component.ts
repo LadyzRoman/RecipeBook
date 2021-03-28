@@ -13,7 +13,6 @@ export class RecipeInfoComponent implements OnInit {
   @Input() recipe?: Recipe;
   titleImageToShow: any;
   imageLoaded = false;
-  stepImages: any[] = [];
 
   constructor(private route: ActivatedRoute,
               private recipeService: RecipeService,
@@ -28,28 +27,6 @@ export class RecipeInfoComponent implements OnInit {
       }, error => {
         console.log(error);
       });
-    }
-    // @ts-ignore
-    // tslint:disable-next-line:prefer-const
-    for (let step of this.recipe?.steps)
-    {
-      if (step.imgId)
-      {
-       this.imageService.getImage(step.imgId).subscribe(data => {
-          this.createStepImage(data, step.id);
-       });
-      }
-    }
-  }
-
-  createStepImage(image: Blob, id: number): void {
-    const reader = new FileReader();
-    reader.addEventListener('load', () => {
-      this.stepImages[id] = reader.result;
-    }, false);
-
-    if (image) {
-      reader.readAsDataURL(image);
     }
   }
 

@@ -33,17 +33,14 @@
         </p>
         <div class="accordion" id="Accordion_steps">
             <div class="accordion-item" [attr.id]="'accordion_'+ i" *ngFor="let step of recipe.steps; let i = index">
-              <h2 class="accordion-header" [attr.id]="'headingStep-' + step.id">
-                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseStep-' + step.id" aria-expanded="false" [attr.aria-controls]="'collapseStep-' + step.id">
+              <h2 class="accordion-header" [attr.id]="'headingStep-' + i">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" [attr.data-bs-target]="'#collapseStep-' + i" aria-expanded="false" [attr.aria-controls]="'collapseStep-' + i">
                   Шаг {{i+1}}
                 </button>
               </h2>
-              <div [attr.id]="'collapseStep-' + step.id" class="accordion-collapse collapse" [attr.aria-labelledby]="'headingStep-' + step.id" data-bs-parent="#Accordion_steps">
+              <div [attr.id]="'collapseStep-' + i" class="accordion-collapse collapse" [attr.aria-labelledby]="'headingStep-' + i" data-bs-parent="#Accordion_steps">
                 <div class="accordion-body">
-                  <div class="text-center">
-                    <img [src]="stepImages[step.id]"  class="img-fluid" alt="Step {{step.id}} image">
-                    <p class="fs-4">{{ step.text }}</p>
-                  </div>
+                  <app-recipe-step [step]="recipe.steps[i]"></app-recipe-step>
                 </div>
               </div>
             </div>
