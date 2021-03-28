@@ -21,6 +21,6 @@ export class RecipeService {
     if (recipe) {
       return of(recipe);
     }
-    throw new Error(`no hero was found with index ${id}`);
+    throw new Error(`no receipt was found with index ${id}`);
   }
 }

@@ -13,6 +13,7 @@ import { TopNavigationComponent } from './components/top-navigation/top-navigati
 import { RecipesComponent } from './components/recipes/recipes.component';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 import { PrettyUnitPipe } from './pipes/pretty-unit.pipe';
+import { RecipeStepComponent } from './components/recipe-step/recipe-step.component';
 
 @NgModule({
   declarations: [
@@ -24,7 +25,8 @@ import { PrettyUnitPipe } from './pipes/pretty-unit.pipe';
     TopNavigationComponent,
     RecipesComponent,
     SearchPanelComponent,
-    PrettyUnitPipe
+    PrettyUnitPipe,
+    RecipeStepComponent
   ],
   imports: [
     BrowserModule,
