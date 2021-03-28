@@ -1,12 +1,17 @@
 <app-search-panel>
 </app-search-panel>
 <div class="container text-center py-5">
-  <h1 class="display-5">Рецепты</h1>
+  <div  *ngIf="category; else noCategory">
+    <h1 class="display-5 d-inline-block me-1">{{category.title}}</h1>
+    <button routerLink="/recipes" class="btn btn-close d-inline-block align-top"></button>
+  </div>
+  <ng-template #noCategory><h1 class="display-5">Рецепты</h1></ng-template>
+
   <div class="row">
     <div class="col-lg-6 col-12 mx-auto">
       <p class="text-muted lead">Какой нибудь прикольный текст про то, что у нас тут лучшие рецепты на
-      главной странице или
-      что то вроде того</p>
+        главной странице или
+        что то вроде того</p>
     </div>
   </div>
 </div>

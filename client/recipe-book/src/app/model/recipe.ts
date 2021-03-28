@@ -1,5 +1,6 @@
 import {Step} from './step';
 import {Ingredient} from './ingredient';
+import {Category} from './category';
 
 export interface Recipe {
   id: number;
@@ -10,6 +11,6 @@ export interface Recipe {
   createdAt: Date;
   imgId?: string;
   description?: string;
-  category: string;
+  category: Category;
   tags: string[];
 }
