@@ -1,4 +1,4 @@
-package ru.etu.recipebook.service;
+package ru.etu.recipebook.service.images;
 
 import org.springframework.core.io.FileSystemResource;
 import ru.etu.recipebook.entity.ImageInfo;
