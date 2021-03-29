@@ -1,4 +1,4 @@
-package ru.etu.recipebook.service;
+package ru.etu.recipebook.service.images;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.io.FileSystemResource;
