@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RecipeListComponent } from './components/recipe-list/recipe-list.component';
 import { RecipePreviewComponent } from './components/recipe-preview/recipe-preview.component';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import { RecipeInfoComponent } from './components/recipe-info/recipe-info.component';
 import { TestUploadComponent } from './components/test-upload/test-upload.component';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
@@ -14,6 +14,8 @@ import { RecipesComponent } from './components/recipes/recipes.component';
 import { SearchPanelComponent } from './components/search-panel/search-panel.component';
 import { PrettyUnitPipe } from './pipes/pretty-unit.pipe';
 import { RecipeStepComponent } from './components/recipe-step/recipe-step.component';
+import { LoginComponent } from './components/login/login.component';
+import {BasicAuthInterceptor} from './helpers/basic-auth.interceptor';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,8 @@ import { RecipeStepComponent } from './components/recipe-step/recipe-step.compon
     RecipesComponent,
     SearchPanelComponent,
     PrettyUnitPipe,
-    RecipeStepComponent
+    RecipeStepComponent,
+    LoginComponent
   ],
   imports: [
     BrowserModule,
@@ -36,7 +39,9 @@ import { RecipeStepComponent } from './components/recipe-step/recipe-step.compon
     FormsModule,
     ReactiveFormsModule
   ],
-  providers: []
+  providers: [
+    { provide: HTTP_INTERCEPTORS, useClass: BasicAuthInterceptor, multi: true },
+  ]
   ,
   bootstrap: [AppComponent]
 })

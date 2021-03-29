@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoginComponent } from '../login/login.component';
+import {AuthenticationService} from '../../services/auth/authentication.service';
 
 @Component({
   selector: 'app-top-navigation',
@@ -7,9 +9,10 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopNavigationComponent implements OnInit {
 
-  constructor() { }
+  constructor( ) { }
 
   ngOnInit(): void {
   }
+
 
 }
