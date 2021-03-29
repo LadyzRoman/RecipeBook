@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import { Location } from '@angular/common';
 import {FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationService} from '../../services/auth/authentication.service';
@@ -19,6 +20,7 @@ export class LoginComponent implements OnInit {
   error = '';
 
   constructor(
+    private location: Location,
     private formBuilder: FormBuilder,
     private route: ActivatedRoute,
     private router: Router,
@@ -43,6 +45,9 @@ export class LoginComponent implements OnInit {
     return this.loginForm.controls;
   }
 
+  back(): void {
+    this.location.back();
+  }
   // tslint:disable-next-line:typedef
   onSubmit() {
     this.submitted = true;
@@ -59,7 +64,7 @@ export class LoginComponent implements OnInit {
           this.router.navigate([this.returnUrl]);
         },
         error => {
-          this.error = error;
+          this.error = 'Ошибка ошибочная';
           this.loading = false;
         }
       );

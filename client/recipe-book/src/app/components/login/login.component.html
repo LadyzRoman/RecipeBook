@@ -1,26 +1,39 @@
 <div class="col-md-6 offset-md-3 mt-5">
   <div class="card">
-    <h4 class="card-header">Авторизация великого кулинара</h4>
+    <div class="card-header">
+      <div class="row">
+        <div class="col">
+      <h4>Авторизация великого кулинара</h4>
+        </div>
+      <div class="col-auto">
+        <button class="btn btn-close" (click)="back()">
+        </button>
+      </div>
+        </div>
+    </div>
     <div class="card-body">
       <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
-        <div class="form-group">
-          <label for="username">Логин</label>
-          <input type="text" formControlName="username" class="form-control" [class.is-invalid]=" submitted && f.username.errors " />
+        <div class="form-floating mb-3 ">
+          <input type="text" id="floatingInput" class="form-control" placeholder=" "
+                 formControlName="username" [class.is-invalid]=" submitted && f.username.errors "/>
+          <label for="floatingInput">Имя пользователя</label>
           <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">Имя пользователя обязательно</div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="password">Пароль</label>
-          <input type="password" formControlName="password" class="form-control" [class.is-invalid]=" submitted && f.password.errors " />
+        <div class="form-floating mb-3">
+          <input type="text" id="floatingPassword" class="form-control" placeholder=" "
+                 formControlName="password" [class.is-invalid]=" submitted && f.password.errors "/>
+          <label for="floatingPassword">Пароль</label>
           <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
             <div *ngIf="f.password.errors.required">Пароль необходим</div>
           </div>
         </div>
-        <button [disabled]="loading" class="btn btn-primary">
-          <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
-          Войти
-        </button>
+            <button [disabled]="loading" class="btn btn-light">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Войти
+            </button>
+            <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
       </form>
     </div>
   </div>
