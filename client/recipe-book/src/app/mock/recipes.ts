@@ -9,6 +9,7 @@ export const CATEGORIES: Category[] = [
   {id: 'main', title: 'Основные блюда'},
   {id: 'beverages', title: 'Напитки'},
 ];
+
 export const RECIPES: Recipe[] = [
   {
     id: 1, title: 'Котлетка с пюрешкой', cookingTime: 60,
@@ -27,6 +28,7 @@ export const RECIPES: Recipe[] = [
     category: CATEGORIES[3],
     tags: [],
     imgId: 'a82fce71-15ec-4171-9289-db319ef64659',
+    description: 'Описание рецепта'
   },
   {
     id: 2, title: 'Жареная курица', cookingTime: 60, steps: [], ingredients: [], createdAt: new Date(),
