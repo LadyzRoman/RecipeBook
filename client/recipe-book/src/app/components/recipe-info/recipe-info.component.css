@@ -5,3 +5,27 @@ h4 {
 .title {
   text-align: center
 }
+
+.ingredient {
+  position: relative;
+  vertical-align: middle;
+}
+
+.ingredient:before {
+  position: absolute;
+  margin: 10px 0 20px;
+  width: 100%;
+  content: "";
+  border-bottom: 1px solid #b8b8b8;
+}
+
+.ingredient span {
+  position: relative;
+  display: inline;
+  background: #fff;
+  padding: 0 10px;
+}
+
+.ingredient .count {
+  float: right;
+}
