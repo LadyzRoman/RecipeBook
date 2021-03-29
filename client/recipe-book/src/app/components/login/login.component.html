@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="form-floating mb-3">
-          <input type="text" id="floatingPassword" class="form-control" placeholder=" "
+          <input type="password" id="floatingPassword" class="form-control" placeholder=" "
                  formControlName="password" [class.is-invalid]=" submitted && f.password.errors "/>
           <label for="floatingPassword">Пароль</label>
           <div *ngIf="submitted && f.password.errors" class="invalid-feedback">

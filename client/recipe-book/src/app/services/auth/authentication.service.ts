@@ -4,7 +4,7 @@ import {User} from '../../model/user';
 import {HttpClient} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {environment} from '../../../environments/environment';
-import {map} from 'rxjs/operators';
+import {map, tap} from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -25,18 +25,19 @@ export class AuthenticationService {
     return this.userSubject.value;
   }
 
-  // tslint:disable-next-line:typedef
-  login(username: string, password: string) {
-    return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, {username, password}).pipe(map(user => {
-      user.authdata = window.btoa(username + ':' + password);
-      localStorage.setItem('user', JSON.stringify(user));
-      this.userSubject.next(user);
-      return user;
-    }));
+  login(username: string, password: string): Observable<any> {
+    return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, {username, password})
+      .pipe(
+        map(user => {
+          user.authdata = window.btoa(username + ':' + password);
+          return user;
+        }),
+        tap(user => localStorage.setItem('user', JSON.stringify(user))),
+        tap(user => this.userSubject.next(user))
+      );
   }
 
-  // tslint:disable-next-line:typedef
-  logout() {
+  logout(): void {
     localStorage.removeItem('user');
     // @ts-ignore
     this.userSubject.next(null);

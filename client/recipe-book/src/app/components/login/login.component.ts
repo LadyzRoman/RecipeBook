@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import { Location } from '@angular/common';
-import {FormBuilder, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormBuilder, FormGroup, Validators} from '@angular/forms';
 import {ActivatedRoute, Router} from '@angular/router';
 import {AuthenticationService} from '../../services/auth/authentication.service';
 import {first} from 'rxjs/operators';
@@ -40,16 +40,15 @@ export class LoginComponent implements OnInit {
     this.returnUrl = this.route.snapshot.queryParams.returnUrl || '/';
   }
 
-  // tslint:disable-next-line:typedef
-  get f() {
+  get f(): { [p: string]: AbstractControl } {
     return this.loginForm.controls;
   }
 
   back(): void {
     this.location.back();
   }
-  // tslint:disable-next-line:typedef
-  onSubmit() {
+
+  onSubmit(): void {
     this.submitted = true;
 
     if (this.loginForm.invalid) {
@@ -58,7 +57,9 @@ export class LoginComponent implements OnInit {
 
     this.loading = true;
     this.authenticationService.login(this.f.username.value, this.f.password.value)
-      .pipe(first())
+      .pipe(
+        first()
+      )
       .subscribe(
         data => {
           this.router.navigate([this.returnUrl]);
