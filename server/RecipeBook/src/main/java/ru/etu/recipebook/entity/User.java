@@ -26,11 +26,13 @@ public class User {
 
     @NotBlank
     @Email
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String email;
 
     @NotBlank
     @Pattern(regexp = "^\\+?\\d*$")
     @Size(max = 15)
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String phoneNumber;
 
     @Size(min = 5)

@@ -1,6 +1,5 @@
 package ru.etu.recipebook.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,6 +8,7 @@ import javax.persistence.*;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
@@ -22,12 +22,28 @@ public class Recipe {
     @NotBlank
     private String title;
 
+    @Lob
+    private String description;
+
     @Min(0)
     private int cookingTime;
 
     private LocalDateTime createdAt;
 
-    private String imgId;
+    @OneToOne
+    @JoinColumn(name = "img_id")
+    private ImageInfo image;
+
+    @ElementCollection
+    private List<String> tags;
+
+    @OneToMany
+    @JoinColumn(name = "recipe_id")
+    private List<RecipeStep> steps;
+
+    @OneToMany
+    @JoinColumn(name = "recipe_id")
+    private List<RecipeIngredient> ingredients;
 
     @ManyToOne
     @JoinColumn(name = "category_id")
@@ -35,6 +51,5 @@ public class Recipe {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
-    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private User createdBy;
 }

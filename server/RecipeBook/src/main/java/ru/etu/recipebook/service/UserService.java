@@ -43,9 +43,9 @@ public class UserService implements UserDetailsService {
         return userRepository.save(user);
     }
 
-    public RecipeBook addRecipe(Recipe recipe, Principal principal) {
+    public void addRecipe(Recipe recipe, Principal principal) {
         User user = getByPrincipal(principal).orElseThrow();
-        return recipeBookRepository.save(new RecipeBook(recipe, user));
+        recipeBookRepository.save(new RecipeBook(recipe, user));
     }
 
     public void deleteRecipe(Recipe recipe, Principal principal) {
