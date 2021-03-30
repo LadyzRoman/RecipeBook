@@ -1,10 +1,13 @@
-package ru.etu.recipebook.model;
+package ru.etu.recipebook.entity;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotBlank;
 import java.time.LocalDateTime;
 
 @Data
@@ -16,8 +19,10 @@ public class Recipe {
     @GeneratedValue
     private long id;
 
+    @NotBlank
     private String title;
 
+    @Min(0)
     private int cookingTime;
 
     private LocalDateTime createdAt;
@@ -30,5 +35,6 @@ public class Recipe {
 
     @ManyToOne
     @JoinColumn(name = "user_id")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private User createdBy;
 }

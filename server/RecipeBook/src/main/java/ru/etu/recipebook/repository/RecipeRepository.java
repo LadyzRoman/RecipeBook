@@ -6,9 +6,9 @@ import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.PagingAndSortingRepository;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
-import ru.etu.recipebook.model.Category;
-import ru.etu.recipebook.model.Recipe;
-import ru.etu.recipebook.model.User;
+import ru.etu.recipebook.entity.Category;
+import ru.etu.recipebook.entity.Recipe;
+import ru.etu.recipebook.entity.User;
 
 import java.util.List;
 

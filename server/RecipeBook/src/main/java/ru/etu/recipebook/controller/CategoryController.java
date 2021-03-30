@@ -1,18 +1,15 @@
 package ru.etu.recipebook.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import ru.etu.recipebook.model.Category;
-import ru.etu.recipebook.model.Recipe;
+import ru.etu.recipebook.entity.Category;
+import ru.etu.recipebook.entity.Recipe;
 import ru.etu.recipebook.service.CategoryService;
 import ru.etu.recipebook.service.RecipeService;
-
-import java.util.List;
 
 @RestController
 @RequestMapping(path = "api/categories")

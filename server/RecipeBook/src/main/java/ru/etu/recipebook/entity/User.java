@@ -1,4 +1,4 @@
-package ru.etu.recipebook.model;
+package ru.etu.recipebook.entity;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.Data;

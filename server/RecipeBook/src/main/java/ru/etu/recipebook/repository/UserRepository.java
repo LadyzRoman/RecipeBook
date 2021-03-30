@@ -2,7 +2,7 @@ package ru.etu.recipebook.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
-import ru.etu.recipebook.model.User;
+import ru.etu.recipebook.entity.User;
 
 import java.util.Optional;
 

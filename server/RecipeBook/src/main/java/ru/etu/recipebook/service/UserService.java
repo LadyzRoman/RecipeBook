@@ -5,9 +5,9 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
-import ru.etu.recipebook.model.Recipe;
-import ru.etu.recipebook.model.RecipeBook;
-import ru.etu.recipebook.model.User;
+import ru.etu.recipebook.entity.Recipe;
+import ru.etu.recipebook.entity.RecipeBook;
+import ru.etu.recipebook.entity.User;
 import ru.etu.recipebook.repository.RecipeBookRepository;
 import ru.etu.recipebook.repository.UserRepository;
 

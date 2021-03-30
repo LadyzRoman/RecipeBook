@@ -4,9 +4,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
-import ru.etu.recipebook.model.Category;
-import ru.etu.recipebook.model.Recipe;
-import ru.etu.recipebook.model.User;
+import ru.etu.recipebook.entity.Category;
+import ru.etu.recipebook.entity.Recipe;
+import ru.etu.recipebook.entity.User;
 import ru.etu.recipebook.repository.RecipeRepository;
 import ru.etu.recipebook.service.RecipeService;
 

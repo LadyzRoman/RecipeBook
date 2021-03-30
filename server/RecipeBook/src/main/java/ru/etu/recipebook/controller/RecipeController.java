@@ -7,7 +7,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import ru.etu.recipebook.model.Recipe;
+import ru.etu.recipebook.entity.Recipe;
 import ru.etu.recipebook.service.RecipeService;
 
 @RestController

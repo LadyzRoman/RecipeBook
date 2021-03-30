@@ -9,14 +9,13 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.server.ResponseStatusException;
-import ru.etu.recipebook.model.Recipe;
-import ru.etu.recipebook.model.User;
+import ru.etu.recipebook.entity.Recipe;
+import ru.etu.recipebook.entity.User;
 import ru.etu.recipebook.service.RecipeService;
 import ru.etu.recipebook.service.UserService;
 
 import javax.validation.Valid;
 import java.security.Principal;
-import java.util.Optional;
 
 /**
  * Controller of user's local recipe list

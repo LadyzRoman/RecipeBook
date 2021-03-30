@@ -1,8 +1,7 @@
 package ru.etu.recipebook.service.mock;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-import ru.etu.recipebook.model.Category;
+import ru.etu.recipebook.entity.Category;
 import ru.etu.recipebook.service.CategoryService;
 import ru.etu.recipebook.service.TransliterationService;
 

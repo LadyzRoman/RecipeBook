@@ -2,9 +2,9 @@ package ru.etu.recipebook.service;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
-import ru.etu.recipebook.model.Category;
-import ru.etu.recipebook.model.Recipe;
-import ru.etu.recipebook.model.User;
+import ru.etu.recipebook.entity.Category;
+import ru.etu.recipebook.entity.Recipe;
+import ru.etu.recipebook.entity.User;
 
 import java.util.List;
 import java.util.Optional;

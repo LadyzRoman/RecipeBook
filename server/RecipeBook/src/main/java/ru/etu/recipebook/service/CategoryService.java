@@ -1,6 +1,6 @@
 package ru.etu.recipebook.service;
 
-import ru.etu.recipebook.model.Category;
+import ru.etu.recipebook.entity.Category;
 
 import java.util.Optional;
 
