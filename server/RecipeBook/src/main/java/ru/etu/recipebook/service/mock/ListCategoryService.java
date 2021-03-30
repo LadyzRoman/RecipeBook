@@ -1,9 +1,7 @@
 package ru.etu.recipebook.service.mock;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
-import org.springframework.web.server.ResponseStatusException;
 import ru.etu.recipebook.model.Category;
 import ru.etu.recipebook.service.CategoryService;
 import ru.etu.recipebook.service.TransliterationService;
@@ -13,7 +11,6 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
-@Service
 public class ListCategoryService implements CategoryService {
 
     private List<Category> categories = new ArrayList<>();
@@ -35,7 +32,7 @@ public class ListCategoryService implements CategoryService {
     }
 
     @Override
-    public List<Category> getCategories() {
+    public Iterable<Category> getCategories() {
         return categories;
     }
 
