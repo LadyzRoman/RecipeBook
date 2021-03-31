@@ -36,7 +36,7 @@ public class UserController {
                 .orElseThrow(() -> new ResponseStatusException(HttpStatus.FORBIDDEN));
     }
 
-    @GetMapping(path = "/register")
+    @PostMapping(path = "/register")
     public User register(@Valid @RequestBody User user) {
         if (userService.isPresent(user)) {
             throw new ResponseStatusException(HttpStatus.BAD_REQUEST, "Email is already taken!");
