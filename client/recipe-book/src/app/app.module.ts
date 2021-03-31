@@ -16,6 +16,7 @@ import { PrettyUnitPipe } from './pipes/pretty-unit.pipe';
 import { RecipeStepComponent } from './components/recipe-step/recipe-step.component';
 import { LoginComponent } from './components/login/login.component';
 import {BasicAuthInterceptor} from './helpers/basic-auth.interceptor';
+import { RegisterUserComponent } from './components/register-user/register-user.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import {BasicAuthInterceptor} from './helpers/basic-auth.interceptor';
     SearchPanelComponent,
     PrettyUnitPipe,
     RecipeStepComponent,
-    LoginComponent
+    LoginComponent,
+    RegisterUserComponent
   ],
   imports: [
     BrowserModule,
