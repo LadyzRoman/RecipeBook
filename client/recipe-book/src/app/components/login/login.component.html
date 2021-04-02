@@ -29,12 +29,20 @@
             <div *ngIf="f.password.errors.required">Пароль необходим</div>
           </div>
         </div>
+        <div class="row">
+          <div class="col">
             <button [disabled]="loading" class="btn btn-light">
               <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
               Войти
             </button>
+          </div>
+          <div class="col-auto">
+            <button routerLink="../register" class="btn btn-light">Регистрация</button>
+          </div>
+        </div>
             <div *ngIf="error" class="alert alert-danger mt-3 mb-0">{{error}}</div>
       </form>
+
     </div>
   </div>
 </div>

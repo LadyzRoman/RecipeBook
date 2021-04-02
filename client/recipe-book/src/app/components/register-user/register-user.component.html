@@ -1,1 +1,53 @@
-<p>register-user works!</p>
+<div class="col-md-6 offset-md-3 mt-5">
+  <div class="card">
+    <h4 class="card-header">Регистрация</h4>
+    <div class="card-body">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()">
+        <div class="form-group">
+          <label for="firstName">Имя</label>
+          <input type="text" id="firstName" formControlName="firstName" class="form-control"
+                 [class.is-invalid]="submitted && f.firstName.errors "/>
+          <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
+            <div *ngIf="f.firstName.errors.required">Имя необходимо</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="lastName">Фамилия</label>
+          <input type="text" id="lastName" formControlName="lastName" class="form-control"
+                 [class.is-invalid]="submitted && f.lastName.errors"/>
+          <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
+            <div *ngIf="f.lastName.errors.required">Фамилия необходима</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="username">Электронная почта (логин)</label>
+          <input type="email" id="username" formControlName="username" class="form-control"
+                 [class.is-invalid]="submitted && f.username.errors"/>
+          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
+            <div *ngIf="f.username.errors.required">Электронная почта (логин) необходима</div>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="password">Пароль</label>
+          <input type="password" id="password" formControlName="password" class="form-control"
+                 [class.is-invalid]="submitted && f.password.errors"/>
+          <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+            <div *ngIf="f.password.errors.required">Пароль необходим</div>
+            <div *ngIf="f.password.errors.minlength">Пароль должен состоять из не менее 6-и символов</div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <button [disabled]="loading" class="btn btn-light">
+              <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
+              Зарегистрироваться
+            </button>
+          </div>
+          <div class="col-auto">
+            <button  class="btn btn-light" (click)="back()">Отмена</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

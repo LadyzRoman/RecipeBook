@@ -43,4 +43,31 @@ export class AuthenticationService {
     this.userSubject.next(null);
     this.router.navigate(['/login']);
   }
+
+  register(user: User): Observable<any> {
+    return this.http.post(`${environment.apiUrl}/users/register`, user);
+  }
+
+  update(id: number, params: any): Observable<any> {
+    return this.http.put(`${environment.apiUrl}/users/${id}`, params)
+      .pipe(map(x => {
+        if (id === this.userValue.id) {
+          const user = {...this.userValue, ...params};
+          localStorage.setItem('user', JSON.stringify(user));
+
+          this.userSubject.next(user);
+        }
+        return x;
+      }));
+  }
+
+  delete(id: number): Observable<any> {
+    return this.http.delete(`${environment.apiUrl}/users/${id}`)
+      .pipe(map(x => {
+        if (id === this.userValue.id) {
+          this.logout();
+        }
+        return x;
+      }));
+  }
 }

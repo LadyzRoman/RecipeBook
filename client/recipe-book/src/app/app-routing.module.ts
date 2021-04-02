@@ -5,6 +5,7 @@ import {RecipeInfoComponent} from './components/recipe-info/recipe-info.componen
 import {TestUploadComponent} from './components/test-upload/test-upload.component';
 import {RecipesComponent} from './components/recipes/recipes.component';
 import {LoginComponent} from './components/login/login.component';
+import {RegisterUserComponent} from './components/register-user/register-user.component';
 
 
 const recipeRoutes: Routes = [
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path: '', redirectTo: 'recipes', pathMatch: 'full'},
   {path: 'recipes', component: RecipesComponent, children: recipeRoutes},
   {path: 'upload', component: TestUploadComponent},
-  {path: 'login', component: LoginComponent }
+  {path: 'login', component: LoginComponent },
+  {path: 'register', component: RegisterUserComponent }
 ];
 
 @NgModule({
