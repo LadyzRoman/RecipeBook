@@ -1,11 +1,21 @@
 <div class="col-md-6 offset-md-3 mt-5">
   <div class="card">
-    <h4 class="card-header">Регистрация</h4>
+    <div class="card-header">
+      <div class="row">
+        <div class="col">
+          <h4>Регистрация великого кулинара</h4>
+        </div>
+        <div class="col-auto">
+          <button class="btn btn-close" (click)="back()">
+          </button>
+        </div>
+      </div>
+    </div>
     <div class="card-body">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
-        <div class="form-group">
+        <div class="form-floating mb-3">
           <label for="firstName">Имя</label>
-          <input type="text" id="firstName" formControlName="firstName" class="form-control"
+          <input type="text" id="firstName" formControlName="firstName" class="form-control" placeholder=" "
                  [class.is-invalid]="submitted && f.firstName.errors "/>
           <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
             <div *ngIf="f.firstName.errors.required">Имя необходимо</div>
@@ -38,13 +48,13 @@
         </div>
         <div class="row">
           <div class="col">
+
+          </div>
+          <div class="col-auto">
             <button [disabled]="loading" class="btn btn-light">
               <span *ngIf="loading" class="spinner-border spinner-border-sm mr-1"></span>
               Зарегистрироваться
             </button>
-          </div>
-          <div class="col-auto">
-            <button  class="btn btn-light" (click)="back()">Отмена</button>
           </div>
         </div>
       </form>
