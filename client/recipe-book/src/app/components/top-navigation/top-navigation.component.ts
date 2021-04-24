@@ -9,7 +9,15 @@ import {AuthenticationService} from '../../services/auth/authentication.service'
 })
 export class TopNavigationComponent implements OnInit {
 
-  constructor( ) { }
+  currentUser: any;
+
+  constructor(private authenticationService: AuthenticationService) {
+    this.authenticationService.user.subscribe(x => this.currentUser = x);
+  }
+
+  logout(): void {
+    this.authenticationService.logout();
+  }
 
   ngOnInit(): void {
   }

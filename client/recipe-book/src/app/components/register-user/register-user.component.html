@@ -14,33 +14,33 @@
     <div class="card-body">
       <form [formGroup]="form" (ngSubmit)="onSubmit()">
         <div class="form-floating mb-3">
-          <label for="firstName">Имя</label>
           <input type="text" id="firstName" formControlName="firstName" class="form-control" placeholder=" "
                  [class.is-invalid]="submitted && f.firstName.errors "/>
+          <label for="firstName">Имя</label>
           <div *ngIf="submitted && f.firstName.errors" class="invalid-feedback">
             <div *ngIf="f.firstName.errors.required">Имя необходимо</div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="lastName">Фамилия</label>
-          <input type="text" id="lastName" formControlName="lastName" class="form-control"
+        <div class="form-floating mb-3">
+          <input type="text" id="lastName" formControlName="lastName" class="form-control" placeholder=" "
                  [class.is-invalid]="submitted && f.lastName.errors"/>
+          <label for="lastName">Фамилия</label>
           <div *ngIf="submitted && f.lastName.errors" class="invalid-feedback">
             <div *ngIf="f.lastName.errors.required">Фамилия необходима</div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="username">Электронная почта (логин)</label>
-          <input type="email" id="username" formControlName="username" class="form-control"
+        <div class="form-floating mb-3">
+          <input type="email" id="username" formControlName="username" class="form-control" placeholder=" "
                  [class.is-invalid]="submitted && f.username.errors"/>
+          <label for="username">Электронная почта (логин)</label>
           <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
             <div *ngIf="f.username.errors.required">Электронная почта (логин) необходима</div>
           </div>
         </div>
-        <div class="form-group">
-          <label for="password">Пароль</label>
-          <input type="password" id="password" formControlName="password" class="form-control"
+        <div class="form-floating mb-3">
+          <input type="password" id="password" formControlName="password" class="form-control" placeholder=" "
                  [class.is-invalid]="submitted && f.password.errors"/>
+          <label for="password">Пароль</label>
           <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
             <div *ngIf="f.password.errors.required">Пароль необходим</div>
             <div *ngIf="f.password.errors.minlength">Пароль должен состоять из не менее 6-и символов</div>
