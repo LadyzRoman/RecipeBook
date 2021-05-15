@@ -1,7 +1,7 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {User} from '../../model/user';
-import {HttpClient} from '@angular/common/http';
+import {HttpClient, HttpHeaders} from '@angular/common/http';
 import {Router} from '@angular/router';
 import {environment} from '../../../environments/environment';
 import {map, tap} from 'rxjs/operators';
@@ -26,7 +26,8 @@ export class AuthenticationService {
   }
 
   login(username: string, password: string): Observable<any> {
-    return this.http.post<any>(`${environment.apiUrl}/users/authenticate`, {username, password})
+    const header = new HttpHeaders().set('Authorization', `Basic ${window.btoa(username + ':' + password)}`);
+    return this.http.get<User>(`${environment.apiUrl}/api/me`, {headers: header})
       .pipe(
         map(user => {
           user.authdata = window.btoa(username + ':' + password);

@@ -22,6 +22,7 @@ import java.security.Principal;
  */
 @RestController
 @RequestMapping(path = "api/me")
+@CrossOrigin(origins = "http://localhost:4200")
 public class UserController {
     @Autowired
     private RecipeService recipeService;

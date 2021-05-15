@@ -13,6 +13,7 @@ import ru.etu.recipebook.service.RecipeService;
 
 @RestController
 @RequestMapping(path = "api/categories")
+@CrossOrigin(origins = "http://localhost:4200")
 public class CategoryController {
     @Autowired
     private CategoryService categoryService;

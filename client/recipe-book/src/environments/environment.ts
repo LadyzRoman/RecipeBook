@@ -7,7 +7,8 @@ export const environment = {
   apiUrl: 'http://localhost:8080',
   // apiUrl: 'http://192.168.31.32:8080',
   imagesEndpoint: 'api/images',
-  recipesEndpoint: 'api/recipes'
+  recipesEndpoint: 'api/recipes',
+  loginEndpoint: 'api/me',
 };
 
 /*

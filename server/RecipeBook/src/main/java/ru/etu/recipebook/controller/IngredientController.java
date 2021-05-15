@@ -7,6 +7,7 @@ import ru.etu.recipebook.service.IngredientService;
 
 @RestController
 @RequestMapping("api/ingredients")
+@CrossOrigin(origins = "http://localhost:4200")
 public class IngredientController {
     @Autowired
     private IngredientService ingredientService;

@@ -14,7 +14,7 @@
 
         <div *ngIf="currentUser; else elseBlock" >
           <a href="#" class="nav-link">Мои рецепты</a>
-          <a href="#" class="nav-link">Выйти</a>
+          <a href="#" (click)="logout()" class="nav-link">Выйти</a>
           <a href="#" class="nav-link">Добавить рецепт</a>
         </div>
       </div>
