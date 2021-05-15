@@ -1,6 +1,7 @@
-package ru.etu.recipebook.service;
+package ru.etu.recipebook.service.images;
 
 import org.springframework.stereotype.Service;
+import ru.etu.recipebook.service.images.IdService;
 
 import java.util.UUID;
 

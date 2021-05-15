@@ -7,14 +7,13 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import ru.etu.recipebook.entity.ImageInfo;
-import ru.etu.recipebook.service.FileLocationService;
+import ru.etu.recipebook.service.images.FileLocationService;
 
 
 @Controller
 @RequestMapping(path = "api/images")
 @CrossOrigin(origins = "http://localhost:4200")
 public class ImageController {
-
     @Autowired
     private FileLocationService<String> fileLocationService;
 

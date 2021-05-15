@@ -1,4 +1,4 @@
-package ru.etu.recipebook.service;
+package ru.etu.recipebook.service.images;
 
 public interface IdService<ID> {
     ID getId();
