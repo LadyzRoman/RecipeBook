@@ -25,9 +25,9 @@ export class AuthenticationService {
     return this.userSubject.value;
   }
 
-  login(username: string, password: string): Observable<any> {
+  login(username: string, password: string): Observable<User> {
     const header = new HttpHeaders().set('Authorization', `Basic ${window.btoa(username + ':' + password)}`);
-    return this.http.get<User>(`${environment.apiUrl}/api/me`, {headers: header})
+    return this.http.get<User>(`${environment.apiUrl}/${environment.loginEndpoint}`, {headers: header})
       .pipe(
         map(user => {
           user.authdata = window.btoa(username + ':' + password);
@@ -45,8 +45,9 @@ export class AuthenticationService {
     this.router.navigate(['/login']);
   }
 
-  register(user: User): Observable<any> {
-    return this.http.post(`${environment.apiUrl}/users/register`, user);
+  register(user: User): Observable<User> {
+    user.phoneNumber = '89008007050';
+    return this.http.post<User>(`${environment.apiUrl}/${environment.loginEndpoint}/register`, user);
   }
 
   update(id: number, params: any): Observable<any> {

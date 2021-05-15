@@ -30,11 +30,11 @@
           </div>
         </div>
         <div class="form-floating mb-3">
-          <input type="email" id="username" formControlName="username" class="form-control" placeholder=" "
-                 [class.is-invalid]="submitted && f.username.errors"/>
-          <label for="username">Электронная почта (логин)</label>
-          <div *ngIf="submitted && f.username.errors" class="invalid-feedback">
-            <div *ngIf="f.username.errors.required">Электронная почта (логин) необходима</div>
+          <input type="email" id="email" formControlName="email" class="form-control" placeholder=" "
+                 [class.is-invalid]="submitted && f.email.errors"/>
+          <label for="email">Электронная почта (логин)</label>
+          <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+            <div *ngIf="f.email.errors.required">Электронная почта (логин) необходима</div>
           </div>
         </div>
         <div class="form-floating mb-3">

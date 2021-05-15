@@ -26,7 +26,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/api/me/register").permitAll()
                 .antMatchers("/api/me/**").authenticated()
                 .and()
-                .httpBasic();
+                .httpBasic()
+                .and()
+                .cors();
     }
 
     @Bean
