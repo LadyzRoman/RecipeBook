@@ -8,5 +8,7 @@ export interface Ingredient {
 export enum Unit {
   PIECE,
   GRAM,
-  SPOON
+  SPOON,
+  LITER,
+  MLITER
 }

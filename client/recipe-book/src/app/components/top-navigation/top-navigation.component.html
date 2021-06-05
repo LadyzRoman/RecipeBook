@@ -10,16 +10,16 @@
         <a href="#" class="nav-link">Home</a>
         <a href="#" class="nav-link">Recipes</a>
       </div>
-      <div class="navbar-nav">
 
-        <div *ngIf="currentUser; else elseBlock" >
+      <div *ngIf="currentUser; else elseBlock">
+        <div class="navbar-nav">
           <a href="#" class="nav-link">Мои рецепты</a>
+          <a href="#" class="nav-link" [routerLink]="['/recipe-add']">Добавить рецепт</a>
           <a href="#" (click)="logout()" class="nav-link">Выйти</a>
-          <a href="#" class="nav-link">Добавить рецепт</a>
         </div>
       </div>
     </div>
   </div>
 </nav>
 
-<ng-template #elseBlock> <a href="#" class="nav-link" [routerLink]="['/login']">Войти</a> </ng-template>
+<ng-template #elseBlock><div class="navbar-nav"> <a href="#" class="nav-link" [routerLink]="['/login']">Войти</a></div></ng-template>

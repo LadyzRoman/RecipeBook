@@ -14,6 +14,10 @@ export class PrettyUnitPipe implements PipeTransform {
         return `${value} гр.`;
       case Unit.SPOON:
         return `${value} ст.л.`;
+      case Unit.LITER:
+        return `${value} л.`;
+      case Unit.MLITER:
+        return `${value} мл.`;
     }
   }
 
